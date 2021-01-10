@@ -4,7 +4,7 @@ def find_section_coordinates(sec):
     from neuron import h
     x=[];y=[];z=[];
     n=h.n3d(sec=sec).__int__()
-    for ii in xrange(n):
+    for ii in range(n):
         x.append(h.x3d(ii,sec=sec))
         y.append(h.y3d(ii,sec=sec))
         z.append(h.z3d(ii,sec=sec))
@@ -15,7 +15,7 @@ def find_mean_section_coordinates(sec):
     from numpy import array, mean
     x=[];y=[];z=[];
     n=h.n3d(sec=sec).__int__()
-    for ii in xrange(n):
+    for ii in range(n):
         x.append(h.x3d(ii,sec=sec))
         y.append(h.y3d(ii,sec=sec))
         z.append(h.z3d(ii,sec=sec))
@@ -108,7 +108,7 @@ def rotate_coordinates(X,Y,Z,v,axis='z'):
         v   = array(v)
         return xyz[:,0].reshape(X.shape),xyz[:,1].reshape(Y.shape),xyz[:,2].reshape(Z.shape),v
     else:
-        raise StandardError,'Not implemented'
+        raise Exception('Not implemented')
 def find_cylindrical_coords(X,Y,Z,v):
     " Align v with positive z axis "
     from numpy import sqrt
