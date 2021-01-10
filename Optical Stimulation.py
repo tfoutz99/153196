@@ -104,7 +104,7 @@ sim = Sim(cell,optrode,output_filename='csv/distance_threshold.csv')
 
 # <codecell>
 
-%pylab inline
+#%pylab inline
 
 # <markdowncell>
 
@@ -126,7 +126,7 @@ styles = iter(['b--','g-.','r'])
 for f in [0.1,0.2,0.4]:
     ds.set_slice(ds.data['Fiber Optic Diameter (mm)']==f)
     pyplot.semilogy(ds.slice['Distance (um)'],ds.slice['Threshold (W/cm2)'],
-                    styles.next(),
+                    next(styles),
                     label='%.1f' % f)
 pyplot.plot([1400], [38.0], '*', color='0.5',label='Aravanis (0.2)') # Aravanis data point
 pyplot.xlabel('Distance (um)')
